@@ -1,0 +1,60 @@
+
+body{ min-height:100vh; color:#fff}
+.tagline{opacity:0.75}
+h1{font-size:4.3em; font-weight:300; margin-bottom:-12px; padding-bottom:0; margin-top:-10px; letter-spacing:5px}
+footer{color:#fff; opacity:0.8; border-top:1px solid #afcaf0}
+.gradient{/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9118c9+0,2bbdce+100 */
+background: #9118c9; /* Old browsers */
+background: -moz-linear-gradient(top,  #9118c9 0%, #2bbdce 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9118c9), color-stop(100%,#2bbdce)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #9118c9 0%,#2bbdce 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #9118c9 0%,#2bbdce 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #9118c9 0%,#2bbdce 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #9118c9 0%,#2bbdce 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9118c9', endColorstr='#2bbdce',GradientType=0 ); /* IE6-9 */
+
+
+}
+.transp{opacity:0.88}
+.smallt{font-size:0.85em; padding-top:5px; display:block;opacity:0.75}
+.wrap{max-width:1150px; }
+.button{margin:3px}
+.button.ghost{border:2px solid #2e267c; background:none;  color:#2e267c}
+.button.white{border:2px solid #2e267c; background:#2e267c;  color:#fff}
+.button.white:hover{border:2px solid #41398f; background:#41398f;  color:#fff}
+.button.ghost:hover{ background:#2e267c;color:#fff;border:2px solid #2e267c; }
+.col4  h3{padding-top:4px;}
+.col4 p{ margin-top:5px; opacity:0.85}
+.logo img{ max-width:320px;}
+.inline-block{display:inline-block;}
+.row > * {
+    float: left;
+    padding:  10px 25px;
+}
+@media all and (max-width:600px)
+{
+h1{
+font-size:3em
+}
+.button{padding:10px 14px;}
+}
+
+@media all and (max-width:460px)
+{
+.logo img{ max-width:70%;}
+h1{
+font-size:2.4em
+}
+.tagline{font-size:1em}
+
+}
+
+@media all and (max-width:350px)
+{
+.tagline{font-size:0.9em; padding-top:8px}
+h1{
+font-size:2em
+}
+.tagline{font-size:1em}
+
+}

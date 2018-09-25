@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, target-densityDpi=device-dpi" />
+<title>Hummingbird front-end framework</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,500,500italic,700,700italic,900|Bree+Serif' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<link rel="stylesheet" type="text/css" href="normalize.css">
+<link rel="stylesheet" type="text/css" href="hummingbird.css">
+<link rel="stylesheet" type="text/css" href="hummingbird.css">
+<style>
+.guide-nav{padding:0; }
+.guide-nav h2{padding: 0; color:#2e267c}
+.guide-nav a{ width:100%; display:block; padding:5px 0; border-top:1px solid #fff; color:#6363cc}
+pre,xmp{background-color:#eceff1; font-weight:400; font-family:Courier, sans-serif; padding:15px; border-radius:5px; border:1px solid #ddd;}
+.note{border-radius:5px; border:2px solid #7cb342; padding:10px; margin:20px 0}
+.text-align-tb td:first-child{ width:21.5%;}
+.xnav{position:fixed;padding:0 20px;background-color:#fafafb; height:100vh; top:0; padding-top:25px;}
+.subtitle{border-bottom:none;color:#2e267c}
+h1{margin-bottom:0;padding-bottom:0; color:#8d1cc9; margin-top:2px}
+h3.desc{border-bottom:1px solid #ddd; padding-bottom:10px; color:#b587d4}
+@media all and (max-width:1100px)
+{
+.xnav{padding: 25px 2px 0;}
+}
+</style>
+</head>
+
+<body>
+<div class='wrap'>
+<div class='row'>
+<div class='col2 guide-nav toupper hide-on-tablet-landscape'>&nbsp;
+<div class='xnav'>
+<h2 class='capitalize'>Quick Reference</h2>
+<a href="#grids">Grids</a>
+<a href="#colors">Colors</a>
+<a href="#typography">Typography</a>
+<a href="#buttons">Buttons</a>
+<a href="#helpers">Helpers</a>
+<a href="#forms">Forms</a>
+<a href="#tables">Tables</a>
+<a href="#icons">Icons</a>
+<a href="#messages">Message Boxes</a>
+<a href="#extenders">EXTENDERS and<br>Accordions</a>
+<a href="#tabs">Tabs</a>
+<a href="#popups">Popups</a>
+<a href="#preloaders">Preloaders</a>
+<a href="#hidemobile">Hiding on mobile</a>
+<a class='button white' href='hummingbird.zip'>Get Hummingbird</a>
+</div></div>
+<div class='col10 fullontablet'>
+<h1 class='toupper'>Hummingbird</h1>
+<h3 class='desc'> Examples and documentation</h3>
+<div id='grids'></div>
+<h2 class='subtitle'>Grids</h2>
+<p>The grid structure is based on a 12-unity flexible and responsive layout.</p>
+
+<div class='note'>
+The actual grids don't have visible borders. Borders were added in this example to better illustrate the structure.
+</div>
+
+<div class='row bordered tcenter'>
+	<div class='col1'>.col1</div><div class='col11'>.col11</div>
+	<div class='col2'>.col2</div><div class='col10'>.col10</div>
+	<div class='col3'>.col3</div><div class='col9'>.col9</div>
+	<div class='col4'>.col4</div><div class='col8'>.col8</div>
+	<div class='col5'>.col5</div><div class='col7'>.col7</div>		
+	<div class='col6'>.col6</div><div class='col6'>.col6</div>
+	<div class='col'>col</div>	
+</div>
+<div class='note'>
+Each group of columns needs to be wrapped in a row. The total sum of the column names inside a row must be 12. 
+</div>
+<strong>Example1: </strong>
+<pre><code>&lt;div class='row'&gt; 
+	&lt;div class='col8'&gt;
+		This is the first column
+	&lt;/div&gt;
+	&lt;div class='col4'&gt;
+		This is the second column
+	&lt;/div&gt;			
+&lt;/div&gt;	</code>
+</pre>
+.col8 + .col4 = 12<br><br>
+<div class='row bordered'>
+	<div class='col8'>This is the first column</div><div class='col4'>This is the second column</div>
+</div><br>
+<div class='note'>
+A row can contain any number of columns, as long as their sum is 12.
+</div>
+<strong>Example2: </strong>
+<pre><code>&lt;div class='row'&gt; 
+	&lt;div class='col2'&gt;
+		First column
+	&lt;/div&gt;
+	&lt;div class='col3'&gt;
+		Second column
+	&lt;/div&gt;
+	&lt;div class='col5'&gt;
+		Third column
+	&lt;/div&gt;
+	&lt;div class='col2'&gt;
+		Fourth column
+	&lt;/div&gt;		
+&lt;/div&gt;	</code>
+</pre>
+.col2 + .col3 + .col5 + .col2 = 12<br><br>
+<div class='row bordered'>
+	<div class='col2'>First column</div><div class='col3'>Second column</div>
+	<div class='col5'>Third column</div><div class='col2'>Fourth column</div>
+</div>
+
+<div id='colors'></div>	
+<h2 class='subtitle'>Colors</h2>
+<p>Hummingbird has a standard color palette, as follows:</p>
+<div class='row tcenter strong'>
+	<div class='col2 bg-darkgrey'>dark grey<br>#37474f</div>
+	<div class='col2 bg-lightgrey'>light grey<br>#eceff1</div>
+	<div class='col2 bg-red'>red<br>#ef5350</div>
+	<div class='col2 bg-blue'>blue<br>#00bcd4</div>
+	<div class='col2 bg-green'>green<br>#8bc34a</div>
+	<div class='col2 bg-yellow'>yellow<br>#fdd835</div>
+</div>
+<div class='row'>
+	<div class='col6'>
+		<h3>Use following classes for text color:</h3>
+		<table class='noborder bold-col-1'>
+		<tr><td>.darkgrey</td><td class='darkgrey'>This is a dark grey text</td><tr>
+		<tr><td>.lightgrey</td><td class='lightgrey'>This is a light grey text</td><tr>
+		<tr><td>.red</td><td class='red'>This is a red text</td><tr>
+		<tr><td>.blue</td><td class='blue'>This is a blue text</td><tr>
+		<tr><td>.green</td><td class='green'>This is a green text</td><tr>
+		<tr><td>.yellow</td><td class='yellow'>This is a yellow text</td><tr>		
+		</table>		
+	</div>
+	<div class='col6'>
+		<h3>Use following classes for background color:</h3>
+		<table class='noborder bold-col-1'>
+		<tr><td>.bg-darkgrey</td><td class='bg-darkgrey'>This is a dark grey background</td><tr>
+		<tr><td>.bg-lightgrey</td><td class='bg-lightgrey'>This is a light grey background</td><tr>
+		<tr><td>.bg-red</td><td class='bg-red'>This is a red background</td><tr>
+		<tr><td>.bg-blue</td><td class='bg-blue'>This is a blue background</td><tr>
+		<tr><td>.bg-green</td><td class='bg-green'>This is a green background</td><tr>
+		<tr><td>.bg-yellow</td><td class='bg-yellow'>This is a yellow background</td><tr>		
+		</table>		
+
+	</div>	
+</div>
+<div class='note'>	<strong>Note:</strong><br> The standard font color is dark grey.<br> The standard background color is white.</div>
+<strong>Example1: </strong>
+<pre><code>&lt;p class='blue'&gt;
+	blue paragraph
+&lt;/p&gt;
+
+&lt;span class='red'&gt;
+	red span
+&lt;/span&gt;		</code>
+</pre>
+<p class='blue'>blue paragraph</p>
+<span class='red'>red span</span>
+<br><br>
+<strong>Example2: </strong>
+<pre><code>&lt;div class='row'&gt;
+	&lt;div class='col bg-darkgrey'&gt;
+		dark grey div
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;a class='button bg-green'&gt;
+	green button
+&lt;/a&gt;		</code>
+</pre>
+<div class='row'>
+<div class='col bg-darkgrey'>dark grey div</div></div>
+<br>
+<a class='button bg-green'>green button</a>
+<br><br>
+
+
+<div class='note'>	<strong>Note:</strong><br>On darker backgrounds (dark grey, red, green, blue) the font color will be automatically set to white</div>
+
+
+<div id='typography'></div>
+<h2 class='subtitle'>Typography</h2>
+	<p>Hummingbird uses "Roboto" by Google Fonts as the default font family. Feel free to replace.
+	<table class='text-align-tb bold-col-1'>
+		<tr><td class='noborder'>h1</td><td class='noborder'><h1>This is a h1 tag</h1></td><tr>
+		<tr><td>h2</td><td><h2>This is a h2 tag</h2></td><tr>
+		<tr><td>h3</td><td><h3>This is a h3 tag</h3></td><tr>
+		<tr><td>h4</td><td><h4>This is a h4 tag</h4></td><tr>		
+		<tr><td>h5</td><td><h5>This is a h5 tag</h5></td><tr>
+		<tr><td>p (paragraph)</td><td><p>Amet luctus vestibulum volutpat ridiculus in aliquet venenatis tellus placerat vestibulum a mauris libero cras pulvinar ac. Nunc a turpis malesuada id a consectetur sem dapibus viverra magnis venenatis sodales ultrices iaculis sodales ut fringilla suspendisse laoreet suspendisse. Scelerisque vestibulum ante a facilisi penatibus donec inceptos mi varius parturient sociis risus a bibendum a pulvinar vestibulum pretium feugiat. Duis a natoque sed hac sodales condimentum ipsum neque gravida tellus rhoncus adipiscing eu consectetur suscipit aptent a venenatis viverra. A diam ante magna in mus pharetra a ac consectetur vestibulum habitasse etiam eget cursus. Adipiscing ullamcorper orci bibendum parturient condimentum eros mus posuere convallis congue suspendisse ante ultrices tortor ut adipiscing suscipit massa vestibulum parturient eleifend.</p></td><tr>		
+		<tr><td>i, .i</td><td><i>Italic text</i></td><tr>
+		<tr><td>b, .b, strong, .strong</td><td><strong>Bold Text</strong></td><tr>
+		<tr><td>a, .link</td><td><a href="#">This is a link</a></td><tr>
+	</table>
+
+<div id='buttons'></div>
+<h2 class='subtitle'>Buttons</h2>
+
+<h3>Use following classes to style buttons:</h3>
+<div class='row'>
+	<div class='col6'>
+	<table class='noborder bold-col-1'>
+		<tr><td>.button</td><td><a class='button'>Regular Button</a></td><tr>
+		<tr><td>.button.button-disabled</td><td><a class='button button-disabled'>Disabled Button</a></td><tr>
+		<tr><td>.button.button-active</td><td><a class='button button-active'>Active Button</a></td><tr>
+		<tr><td>.button.button-big</td><td><a class='button button-big'>Big Button</a></td><tr>		
+		<tr><td>.button.button-small</td><td><a class='button button-small'>Small Button</a></td><tr>	
+	</table>
+	</div>
+	<div class='col6'>
+	<table class='noborder bold-col-1'>
+		<tr><td>.button.bg-red</td><td><a class='button bg-red'>Red Button</a></td><tr>
+		<tr><td>.button.bg-green</td><td><a class='button bg-green'>Green Button</a></td><tr>
+		<tr><td>.button.bg-blue</td><td><a class='button bg-blue'>Blue Button</a></td><tr>		
+		<tr><td>.button.bg-yellow</td><td><a class='button bg-yellow'>Yellow Button</a></td><tr>		
+	</table>	
+	</div>
+</div>
+
+<div class='note'>
+<b>Note:</b><br>
+Classes can be mixed toghether on the same element.<br>
+Elements like <b>a</b>, <b>button</b> and <b>input type="button"</b> can be styled in the same manner.
+</div>
+<strong>Example 1: </strong>
+<xmp><a class='button button-big bg-red'>Big Red Button</a></xmp>
+<a class='button button-big bg-red'>Big Red Button</a>
+<br><br>
+<strong>Example 2: </strong>
+<xmp><button class='button button-small bg-blue button-active'>Small Blue Active Button</button></xmp>
+<button class='button button-small button-active bg-blue'>Small Blue Active Button</button>
+<br><br>
+<strong>Example 3: </strong>
+<xmp><input type='button' class='button bg-yellow' value='Yellow Button'/></xmp>
+<input type='button' class='button bg-yellow' value='Yellow Button'/>
+<br><br>
+<h3>Buttons with icons</h3>
+<p>Buttons can also include icons. For a full guide, check out <a href='#iconsbuttons'>Icons in Buttons</a></p>
+<strong>Example: </strong><br>
+<xmp><a class='button button-icon button-big bg-red' href="#">
+	<i class="material-icons">settings</i> 
+	Settings
+</a>
+
+<a class='button button-icon button-active bg-green' href="#">
+	<i class="material-icons">settings</i>
+	Settings
+</a>
+
+<a class='button button-icon button-disabled' href="#">
+	<i class="material-icons">settings</i>
+	Settings
+</a>
+
+<a class='button button-icon button-small' href="#">
+	<i class="material-icons">settings</i>
+	Settings
+</a>
+</xmp>
+<p>
+<a class='button button-icon button-big bg-red' href="#"> <i class="material-icons">settings</i> Settings </a>
+<a class='button button-icon button-active bg-green' href="#"> <i class="material-icons">settings</i> Settings </a>
+<a class='button button-icon button-disabled' href="#"> <i class="material-icons">settings</i> Settings </a>
+<a class='button button-icon button-small' href="#"> <i class="material-icons">settings</i> Settings </a>
+</p>
+<div id='helpers'></div>
+<h2 class='subtitle'>Helpers</h2>
+
+<div class='row'>
+	<div class='col6'>
+	<h3>Text Manipulation</h3>
+	<table class='bold-col-1'>
+		<tr><td>original text</td><td>This Is A text</td><tr>
+		<tr><td>.toupper</td><td class='toupper'>ThIs Is A text</td><tr>
+		<tr><td>.tolower</td><td class='tolower'>ThIs Is A text</td><tr>
+		<tr><td>.capitalize</td><td class='capitalize'>ThIs Is A text</td><tr>	
+	</table>
+	</div>
+	<div class='col6'>
+	<h3>Spacing and appearance</h3>	
+	<table class='bold-col-1'>
+		<tr><td>.noborder</td><td>Removes borders</td><tr>
+		<tr><td>.nomargin</td><td>Removes margin</td><tr>
+		<tr><td>.nopadding</td><td>Removes padding</td><tr>
+		<tr><td>.border</td><td>Adds a light grey border around an element</td><tr>		
+		<tr><td>.border-radius</td><td>Adds border radius</td><tr>		
+		<tr><td>.full-width</td><td>renders element to the full width of parent container</td><tr>				
+		<tr><td>.disabled</td><td>disables element, reduces opacity to half and removes pointer events</td><tr>			
+		<tr><td>.pointer</td><td>Adds cursor pointer when hovering on an element</td><tr>				
+	</table>
+	</div>
+</div>
+<div class='row'>
+	<div class='col'>
+	<h3>Text Alignment</h3>
+	<table class='text-align-tb  bold-col-1'>
+		<tr><td>.tleft</td><td class='tleft'>Eleifend velit nam dis condimentum suspendisse nisi lectus ad consectetur vivamus vehicula magna suspendisse velit nam non elit.Facilisi tristique porttitor cubilia dapibus condimentum lobortis a dictumst dui parturient libero ullamcorper aliquet tempus a.</td><tr>
+		<tr><td>.tcenter</td><td class='tcenter'>Eleifend velit nam dis condimentum suspendisse nisi lectus ad consectetur vivamus vehicula magna suspendisse velit nam non elit.Facilisi tristique porttitor cubilia dapibus condimentum lobortis a dictumst dui parturient libero ullamcorper aliquet tempus a.</td><tr>
+		<tr><td>.tright</td><td class='tright'>Eleifend velit nam dis condimentum suspendisse nisi lectus ad consectetur vivamus vehicula magna suspendisse velit nam non elit.Facilisi tristique porttitor cubilia dapibus condimentum lobortis a dictumst dui parturient libero ullamcorper aliquet tempus a.</td><tr>
+		<tr><td>.tjustify</td><td class='tjustify'>Eleifend velit nam dis condimentum suspendisse nisi lectus ad consectetur vivamus vehicula magna suspendisse velit nam non elit.Facilisi tristique porttitor cubilia dapibus condimentum lobortis a dictumst dui parturient libero ullamcorper aliquet tempus a.</td><tr>	
+	</table>
+	</div>
+
+</div>
+
+<div id='forms'></div>
+<h2 class='subtitle'>Forms</h2>
+<p>Form elements are styled accoring to their DOM Object type. It's not neccessary to add classes on them.</p>
+<br><h3>Text Inputs</h3>
+<xmp><label for='mytext'>Input Text:</label>
+<input type='text' id='mytext'>
+</xmp>
+<label for='mytext'>Input Text:</label>
+<input type='text' id='mytext'>
+<br><h3>Disabled Inputs</h3>
+<xmp><label class='disabled' for='mytextdisabled'>Input Text:</label>
+<input id='mytextdisabled' class='disabled' type='text'></xmp>
+<label class='disabled' for='mytextdisabled'>Input Text:</label>
+<input id='mytextdisabled' class='disabled' type='text'>
+<div class='message-green'><strong>Note: </strong>Any kind of element can be disabled by adding the class <xmp class='inline nopadding nomargin'>.disabled</xmp></div>
+<br>
+<h3>Validation Errors</h3>
+<p>Add the class <b>error</b> to inputs to mark a validation error.</p>
+<b>Example:</b>
+<xmp><label for='mytext'>Input Text:</label>
+<input class='error' type='text' id='mytext'>
+</xmp>
+<label for='mytext'>Input Text:</label>
+<input class='error' type='text' id='mytext'>
+<br><br>
+<h3>Deletable Inputs</h3>
+<p>Add the class <b>deletable</b> to the input you wish to make deletable.<br>
+Add the "cancel" icon after the input. It will position automatically inside the input element as long as you have added the class "deletable" to the input. 
+</p>
+<b>Example:</b>
+<xmp><label for='mytext'>Input Text:</label>
+<input class='deletable' type='text' id='mytext' value='Hello'><i class="material-icons">cancel</i>
+</xmp>
+<label for='mytext'>Input Text:</label>
+<input class='deletable' type='text' id='mytext' value='Hello'><i class="material-icons">cancel</i>
+<br><br>
+<h3>Search Box and similar action icons after inputs</h3>
+<b>Example</b>
+<xmp><label for='mytext'>Input Text:</label>
+<input type='text' id='mytext' value='Hello'>
+<i class="material-icons md-24 action bg-green">search</i></xmp>
+<p>Add the class <b><i>action</i></b> to the icon element. Use a background color of your choice with the <b>bg-[<i>color</i>]</b> class.</p>
+<label for='mytext'>Input Text:</label>
+<input type='text' id='mytext' value='Hello'><i class="material-icons md-24 action bg-green">search</i>
+<br><br><h3>Select dropdowns</h3>
+<xmp><label for='myselect'>Select an item:</label>
+<select id='myselect'>
+	<option>Cat</option>
+	<option>Dog</option>
+	<option>Mouse</option>	
+</select></xmp>
+<label for='myselect'>Select an item:</label>
+ <select id='myselect'>
+	<option>Cat</option>
+	<option>Dog</option>
+	<option>Mouse</option>	
+</select>
+<br><h3>Checkboxes</h3>
+<xmp><input type="checkbox" name="mycheckbox" value="mycheckbox" id="mycheckbox"> 
+<label for='mycheckbox'>This is a checkbox</label></xmp>
+<input type="checkbox" name="mycheckbox" value="mycheckbox" id="mycheckbox"> <label for='mycheckbox'>This is a checkbox</label>
+<br>
+<br><h3>Textboxes</h3>
+<xmp><label for='mytextbox'>Comments:</label>
+<textarea id='mytextbox'>Add some comments here</textarea></xmp>
+
+<label for='mytextbox'>Comments:</label>
+<textarea id='mytextbox'>Add some comments here</textarea>	
+
+<br><br><h3>Radio Buttons</h3>
+<xmp><label>Will you attend the party?</label>
+
+<input type="radio" name="answer" id="yes" value="no">
+<label for="yes">yes</label>
+
+<input type="radio" name="answer" id="no" value="no">
+<label for="no">no</label>
+	
+<input type="radio" name="answer" id="maybe" value="maybe">
+<label for="maybe">maybe</label></xmp>
+
+	<label>Will you attend the party?</label>
+	<input type="radio" name="answer" id="yes" value="no">
+	<label for="yes">yes</label>
+	<input type="radio" name="answer" id="no" value="no">
+	<label for="no">no</label>
+	<input type="radio" name="answer" id="maybe" value="maybe">
+	<label for="maybe">maybe</label>	
+
+<br><br><h3>File Upload</h3>
+<xmp><label>Select a file:</label>
+<input type="file"></xmp>
+<label>Select a file:</label>
+<input type="file">
+	
+<br><br><h3>Inputs and background color</h3>
+<p class='message-green'><strong>Note: </strong>Inputs can be placed on any type of background without any customization. The color of the input is based on opacity  and will adjust to any color background.</p>
+<br><strong>Example:</strong>
+<xmp><div class='row'>
+	<div class='col4 bg-darkgrey'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>		
+	</div>
+	<div class='col4 bg-lightgrey'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>			
+	</div>
+	<div class='col4 bg-blue'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>			
+	</div>	
+</div>
+<div class='row'>
+	<div class='col4 bg-red'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>		
+	</div>
+	<div class='col4 bg-yellow'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>			
+	</div>
+	<div class='col4 bg-green'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>			
+	</div>	
+</div>
+</xmp>
+<div class='row'>
+	<div class='col4 bg-darkgrey'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>		
+	</div>
+	<div class='col4 bg-lightgrey'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>			
+	</div>
+	<div class='col4 bg-blue'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>			
+	</div>	
+</div>
+<div class='row'>
+	<div class='col4 bg-red'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>		
+	</div>
+	<div class='col4 bg-yellow'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>			
+	</div>
+	<div class='col4 bg-green'>
+		<label for='mytext'>Input Text:</label>
+		<input type='text' id='mytext'>			
+	</div>	
+</div>
+
+
+<div id='tables'></div>
+<h2 class='subtitle'>Tables</h2>
+	<h3>Use following classes to style tables:</h3>
+	
+	<table class='bold-col-1'>
+		<tr><td>.noborder</td><td>Removes borders</td><tr>
+		<tr><td>.fullborder</td><td>Adds full borders</td><tr>	
+		<tr><td>.darkgrey-header</td><td>Adds dark grey header</td><tr>
+		<tr><td>.blue-header</td><td>Adds blue header</td><tr>
+		<tr><td>.hoverable</td><td>Adds effect when hovering on a row</td><tr>		
+		<tr><td>.bi-col</td><td>Alternates row colors</td><tr>		
+		<tr><td>.bold-col-n</td><td>Makes n-th column bold. Replace n with an actual number from 1 to 10</td><tr>
+		<tr><td>.hide-on-tablet-landscape-col-n</td><td>Hides n-th column on tablets (landscape and portrait) and smartphones</td></tr>
+		<tr><td>.hide-on-tablet-portrait-col-n</td><td>Hides n-th column on tablets (portrait) and smartphones</td></tr>
+		<tr><td>.hide-on-mobile-col-n</td><td>Hides n-th column on smartphones</td></tr>				
+	</table>
+	
+	<div class='message-green'>Specific table columns can be hidden on mobile. For full description, check out <a href='#hidingcols'>hiding table columns on mobile</a></div>	
+	
+<div class='message-red'>
+	<strong>Note: </strong>Class names should always be placed on <xmp class='inline nopadding nomargin'><table></xmp> elements. Adding styles on particular rows or cells should be avoided, unless completely necessary.
+</div>
+<strong>Example 1: Standard Table with hover effect</strong>
+<xmp><table class='hoverable'></xmp>	
+<table class='hoverable'>
+<thead>
+	<tr>
+		<td>Title1</td>
+		<td>Title2</td>
+		<td>Title3</td>
+		<td>Title4</td>
+		<td>Title5</td>
+		<td>Title6</td>		
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+</tbody>
+</table>
+<br><br>
+<strong>Example 2: Table with alternative rows and hover</strong>
+<xmp><table class='bi-col darkgrey-header hoverable'></xmp>	
+<table class='bi-col darkgrey-header hoverable'>
+<thead>
+	<tr>
+		<td>Title1</td>
+		<td>Title2</td>
+		<td>Title3</td>
+		<td>Title4</td>
+		<td>Title5</td>
+		<td>Title6</td>		
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+</tbody>
+</table>
+<br><br>
+<strong>Example 3: Table with dark header and alternative rows</strong>
+<xmp><table class='bi-col darkgrey-header'></xmp>	
+<table class='bi-col darkgrey-header'>
+<thead>
+	<tr>
+		<td>Title1</td>
+		<td>Title2</td>
+		<td>Title3</td>
+		<td>Title4</td>
+		<td>Title5</td>
+		<td>Title6</td>		
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+
+</tbody>
+</table>
+<br><br>
+<div class='message-green' id='flippable_table'>
+<b>Note:</b> Adding the class <b><i>flip-on-mobile</i></b> to a table will transform its rows into a column on mobile.
+</div>
+<strong>Example 4: Table with blue header, alternative rows and full borders that flips on mobile</strong>
+<xmp><table class='bi-col blue-header fullborder flip-on-mobile bold-col-1 bold-col-6'></xmp>	
+<table class='bi-col blue-header fullborder flip-on-mobile bold-col-1 bold-col-6'>
+<thead>
+	<tr>
+		<td>Name</td>
+		<td>Occupation</td>
+		<td>Age</td>
+		<td>Gender</td>
+		<td>Eyes</td>
+		<td>Hair</td>		
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td> Anna </td>
+		<td><i>Graphic Designer</i></td>
+		<td> 22 </td>
+		<td> Female </td>
+		<td> Blue </td>
+		<td> Blonde </td>		
+	</tr>	
+	<tr>
+		<td> Mark </td>
+		<td><i>Java Developer</i></td>
+		<td> 35 </td>
+		<td> Male </td>
+		<td> Green </td>
+		<td> Black </td>		
+	</tr>	
+	<tr>
+		<td> Lily </td>
+		<td><i>UX Designer</i></td>
+		<td> 31 </td>
+		<td> Female</td>
+		<td> Brown </td>
+		<td> Pink </td>		
+	</tr>	
+	<tr>
+		<td> John </td>
+		<td><i>Sysadmin</i></td>
+		<td> 27 </td>
+		<td> Male</td>
+		<td> Hazel</td>
+		<td> Red </td>		
+	</tr>	
+</tbody>
+</table>
+<br><br>
+<strong>Example 4: Table with blue header, alternative rows, full borders, 1st and 3rd column bold</strong>
+<xmp><table class='bi-col blue-header fullborder bold-col-1 bold-col-3'></xmp>	
+<table class='bi-col blue-header fullborder bold-col-1 bold-col-3'>
+<thead>
+	<tr>
+		<td>Title1</td>
+		<td>Title2</td>
+		<td>Title3</td>
+		<td>Title4</td>
+		<td>Title5</td>
+		<td>Title6</td>		
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+	<tr>
+		<td> Item1 </td>
+		<td> Item2 </td>
+		<td> Item3 </td>
+		<td> Item4 </td>
+		<td> Item5 </td>
+		<td> Item6 </td>		
+	</tr>	
+</tbody>
+</table>
+
+<div id='icons'></div>
+<h2 class='subtitle'>Icons</h2>
+
+Hummingbird uses the Material Icons font family from google. 
+Icons can be added in the following manner:
+
+<xmp><i class="material-icons">alarm</i></xmp>
+<i class="material-icons">alarm</i>
+
+<div class='message-green'>
+	The entire icon list can be found at <a href="https://www.google.com/design/icons/">www.google.com/design/icons/</a> 
+</div>
+<h3>The Icons can be scaled in the following manner:</h3>
+	<table class='bold-col-1'>
+		<tr><td><xmp class='inline'><i class="material-icons md-18">alarm</i></xmp></td><td>18px icon</td><td><i class="material-icons md-18">alarm</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-24">alarm</i></xmp></td><td>24px icon</td><td><i class="material-icons md-24">alarm</i></td><tr>	
+		<tr><td><xmp class='inline'><i class="material-icons md-36">alarm</i></xmp></td><td>36px icon</td><td><i class="material-icons md-36">alarm</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-48">alarm</i></xmp></td><td>48px icon</td><td><i class="material-icons md-48">alarm</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-64">alarm</i></xmp></td><td>64px icon</td><td><i class="material-icons md-64">alarm</i></td><tr>		
+		<tr><td><xmp class='inline'><i class="material-icons md-72">alarm</i></xmp></td><td>72px icon</td><td><i class="material-icons md-72">alarm</i></td><tr>			
+	</table>
+<div class='message-green'>
+	Being basically a font, the icons are vectorial and can be scaled infinitely. 
+</div><br>
+<h3>Icons can be colored by adding color classes, defined in the section <a href="#colors">"colors"</a>:</h3>
+	<table class='bold-col-1'>
+		<tr><td><xmp class='inline'><i class="material-icons md-24 md-bg  bg-blue">search</i></xmp></td><td>24px icon</td><td><i class="material-icons md-24 md-bg bg-blue">search</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-24 md-bg bg-red">search</i></xmp></td><td>24px icon</td><td><i class="material-icons md-24 md-bg bg-red">search</i></td><tr>	
+		<tr><td><xmp class='inline'><i class="material-icons md-24 md-bg bg-green">search</i></xmp></td><td>24px icon</td><td><i class="material-icons md-24 md-bg bg-green">search</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-24 md-bg  bg-lightgrey">search</i></xmp></td><td>24px icon</td><td><i class="material-icons md-24 md-bg bg-lightgrey">search</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-24 md-bg  bg-darkgrey">search</i></xmp></td><td>24px icon</td><td><i class="material-icons md-24 md-bg bg-darkgrey">search</i></td><tr>		
+		<tr><td><xmp class='inline'><i class="material-icons md-24 md-bg  bg-yellow">search</i></xmp></td><td>24px icon</td><td><i class="material-icons md-24 md-bg bg-yellow">search</i></td><tr>			
+	</table>
+	<table>
+		<tr><td><xmp class='inline'><i class="material-icons md-36 blue">search</i></xmp></td><td>36px icon</td><td><i class="material-icons md-36 blue">search</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-36 red">search</i></xmp></td><td>36px icon</td><td><i class="material-icons md-36 red">search</i></td><tr>	
+		<tr><td><xmp class='inline'><i class="material-icons md-36 green">search</i></xmp></td><td>36px icon</td><td><i class="material-icons md-36 green">search</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-36 lightgrey">search</i></xmp></td><td>36px icon</td><td><i class="material-icons md-36 lightgrey">search</i></td><tr>
+		<tr><td><xmp class='inline'><i class="material-icons md-36 darkgrey">search</i></xmp></td><td>36px icon</td><td><i class="material-icons md-36 darkgrey">search</i></td><tr>		
+		<tr><td><xmp class='inline'><i class="material-icons md-36 yellow">search</i></xmp></td><td>36px icon</td><td><i class="material-icons md-36 yellow">search</i></td><tr>			
+	</table>
+
+	<div id='iconsbuttons'>&nbsp;</div>
+	<h3>Icons in buttons</h3>
+	<p>Icons can be included in buttons as well, by adding the specific icon html inside a button element. For more information on buttons, check out <a href="#buttons">"Buttons"</a>:</p>
+	<strong>Example1: regular button</strong>
+<xmp><a class='button button-icon bg-blue' href="#">
+	<i class="material-icons">settings</i>
+	Settings
+</a></xmp>
+	<a class='button button-icon bg-blue' href="#"><i class="material-icons">settings</i>Settings</a><br><br>
+	<strong>Example2: small button</strong>
+<xmp><a class='button button-icon button-small bg-blue' href="#">
+	<i class="material-icons">settings</i>
+	Settings
+</a></xmp>
+	<a class='button button-icon button-small bg-blue' href="#"><i class="material-icons">settings</i>Settings</a><br><br>
+	<strong>Example3: big button</strong>
+<xmp><a class='button button-icon button-big bg-blue' href="#">
+	<i class="material-icons">settings</i>
+	Settings
+</a></xmp>
+	<a class='button button-icon button-big bg-blue' href="#"><i class="material-icons">settings</i>Settings</a>
+<div class='message-green'>
+	<strong>Note:</strong>
+	Color and font size of icons inside of buttons is set automatically according to button size and background color.
+</div>	
+
+<div id='messages'></div>
+<h2 class='subtitle'>Message Boxes</h2>
+<p>Messages can be used to highlight a message to the user. Green and red should be used accordingly.
+<xmp><div class='message-red'>This is a message with red borders</div></xmp>
+<div class='message-red'>This is a message with red borders</div>	
+<br>
+<xmp><div class='message-green'></div>This is a message with green borders</div></xmp>
+<div class='message-green'>This is a message with green borders</div>	
+<br>
+<h3>Message Boxes with icons</h3>
+<p>Icons can be included within message boxes. For more info on icons, see <a href="#icons">Icons</a></p>
+<xmp><div class='message-green'>
+	<i class="material-icons">check_circle</i>
+	This is a positive message with green borders
+</div></xmp>
+<div class='message-green'><i class="material-icons">check_circle</i>This is a positive message with green borders</div>
+<br>
+<xmp><div class='message-red'>
+	<i class="material-icons">error</i>
+	This is an alarm message with red borders
+</div></xmp>
+<div class='message-red'><i class="material-icons">error</i>This is an alarm message with red borders</div>
+
+<div id='extenders'></div>
+<h2 class='subtitle'>Extenders and accordions</h2>
+<p>An extender consists of following elements:<br>
+<b><i>.extender</i></b> - is the container of the extender<br>
+<b><i>.extender-header</i></b> - is the clickable element and title.<br>
+<b><i>.extender-content</i></b> - holds the content, which can be collapsed or extended
+</p>
+<div class='message-green'>
+<b>Note</b>: Extenders are collapsed by default. In order to load them opened, add the class <b><i>extended</i></b> to the <b><i>.extender-header</i></b> element.
+</div>
+
+<b>Example1: Normal extender</b>
+<xmp><div class='extender'>
+	<h3 class='extender-header extended'>
+		<i class='material-icons'>keyboard_arrow_up</i>
+		Extend me
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+</div></xmp>
+<div class='extender'>
+<h3 class='extender-header extended'>
+
+<i class='material-icons'>keyboard_arrow_up</i>
+Extend me!</h3>
+<div class='extender-content'>
+Add some content here!
+</div>
+</div>
+<br>
+<div class='message-green'>
+<b>Note: </b>Use any of the predefined background color classes on the <b><i>extender-header</i></b> element to change its background color.
+</div>
+<b>Example2: blue extender</b>
+<xmp><div class='extender'>
+	<h3 class='extender-header bg-blue'>...</h3>
+	<div class='extender-content'>...</div>
+</div></xmp>
+<div class='extender'>
+	<h3 class='extender-header bg-blue'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+</div>
+<br>
+<b>Example 3: small extender</b>
+<br>Add the class <b><i>small</i></b> to the extender for the small version.
+<xmp><div class='extender small'>
+	<h3 class='extender-header bg-darkgrey'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+</div></xmp>
+
+<div class='extender small'>
+	<h3 class='extender-header bg-darkgrey'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+</div>
+<br><br>
+<h3>Groups of extenders</h3>
+<p>Multiple <b><i>extender-header</i></b> and <b><i>extender-content</i></b> elements can be grouped inside an <b><i>extender</i></b> element. They open independently of one another. </p>
+<b>Example</b>:
+<xmp><div class='extender'>
+	<h3 class='extender-header extended bg-lightgrey'>
+		<i class='material-icons'>keyboard_arrow_up</i>
+		Extend me 1
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+	<h3 class='extender-header bg-blue'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me 2
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+	<h3 class='extender-header bg-darkgrey'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me 3
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>	
+</div>
+</xmp>
+<div class='extender'>
+	<h3 class='extender-header extended bg-lightgrey'>
+		<i class='material-icons'>keyboard_arrow_up</i>
+		Extend me 1
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+	<h3 class='extender-header bg-blue'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me 2
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+	<h3 class='extender-header bg-darkgrey'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me 3
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>	
+</div>
+
+<h3>Accordion</h3>
+<p>Adding the class "accordion" to an <b><i>extender</i></b> that contains multiple elements, like in the example above, will transform it into an accordion.</p>
+<xmp><div class='extender accordion'>
+		....
+</div></xmp>
+<div class='extender accordion'>
+	<h3 id="ac" class='extender-header extended bg-lightgrey'>
+		<i class='material-icons'>keyboard_arrow_up</i>
+		Extend me 1
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+	<h3 class='extender-header bg-blue'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me 2
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>
+	<h3 class='extender-header bg-darkgrey'>
+		<i class='material-icons'>keyboard_arrow_down</i>
+		Extend me 3
+	</h3>
+	<div class='extender-content'>
+		Add some content here!
+	</div>	
+</div>
+<br><br>
+<div id='tabs'></div>
+<h2 class='subtitle'>Tabs</h2>
+<p>Each tab control consists of a wrapper, a header bar, and the actual tabs.</p>
+<b>Example:</b>
+<xmp><div class='tab-group bordered'>
+	<div class='tab-header bg-blue'>
+		<a class='tab-link'>First Tab</a>
+		<a class='tab-link'>Second Tab</a>
+		<a class='tab-link'>Third Tab</a>
+		<a class='tab-link'>Fourth Tab</a>		
+	</div>
+	<div class='tab-content'>
+		Content of First Tab
+	</div>
+	<div class='tab-content'>
+		Content of Second Tab
+	</div>
+	<div class='tab-content'>
+		Content of Third Tab
+	</div>	
+	<div class='tab-content'>
+		Content of Fourth Tab
+	</div>	
+</div></xmp>
+
+<div class='tab-group bordered'>
+	<div class='tab-header bg-blue'>
+		<a class='tab-link'>First Tab</a>
+		<a class='tab-link'>Second Tab</a>
+		<a class='tab-link'>Third Tab</a>
+		<a class='tab-link'>Fourth Tab</a>		
+	</div>
+	<div class='tab-content'>
+		Content of First Tab
+	</div>
+	<div class='tab-content'>
+		Content of Second Tab
+	</div>
+	<div class='tab-content'>
+		Content of Third Tab
+	</div>	
+	<div class='tab-content'>
+		Content of Fourth Tab
+	</div>	
+</div>
+
+<div id='preloaders'></div>
+<h2 class='subtitle'>Preloaders</h2>
+<p>Preloaders are vectorial svg graphics. The size can be specified within the img tab like this:
+<xmp><img src="loading-spin.svg" width="64" height="64" /></xmp>
+<xmp><img src="loading-spin.svg" width="32" height="32" /></xmp>
+</p>
+<div class='message-green'>
+<b>Note:</b> It is recommended the you use 64px for big loaders(page loaders) and 32px for small loaders(element loaders) 
+</div>
+<div class='row bg-darkgrey'>
+	<div class='border col3 tcenter'>loading-spinning-bubbles.svg<br><br><img src="images/loading-spinning-bubbles.svg" width="64" height="64" /><br>please wait</div>
+	<div class='border col3 tcenter'>loading-spokes.svg<br><br><img src="images/loading-spokes.svg" width="64" height="64" /><br>please wait</div>
+	<div class='border col3 tcenter'>loading-bars.svg<br><br><img src="images/loading-bars.svg" width="64" height="64" /><br>please wait</div>
+	<div class='border col3 tcenter'>loading-spin.svg<br><br><img src="images/loading-spin.svg" width="64" height="64" /><br>please wait</div>	
+</div>
+<div class='row bg-lightgrey'>
+	<div class='border-dark col3 tcenter'>loading-spinning-bubbles-dark.svg<br><br><img src="images/loading-spinning-bubbles-dark.svg" width="64" height="64" /><br>please wait</div>
+	<div class='border-dark col3 tcenter'>loading-spokes-dark.svg<br><br><img src="images/loading-spokes-dark.svg" width="64" height="64" /><br>please wait</div>
+	<div class='border-dark col3 tcenter'>loading-bars-dark.svg<br><br><img src="images/loading-bars-dark.svg" width="64" height="64" /><br>please wait</div>
+	<div class='border-dark col3 tcenter'>loading-spin-dark.svg<br><br><img src="images/loading-spin-dark.svg" width="64" height="64" /><br>please wait</div>	
+</div>	
+<div class='row bg-darkgrey'>
+	<div class='border col3 tcenter'>loading-spinning-bubbles.svg<br><br><img src="images/loading-spinning-bubbles.svg" width="32" height="32" /><br>please wait</div>
+	<div class='border col3 tcenter'>loading-spokes.svg<br><br><img src="images/loading-spokes.svg" width="32" height="32" /><br>please wait</div>
+	<div class='border col3 tcenter'>loading-bars.svg<br><br><img src="images/loading-bars.svg" width="32" height="32" /><br>please wait</div>
+	<div class='border col3 tcenter'>loading-spin.svg<br><br><img src="images/loading-spin.svg" width="32" height="32" /><br>please wait</div>	
+</div>
+<div class='row bg-lightgrey'>
+	<div class='border-dark col3 tcenter'>loading-spinning-bubbles-dark.svg<br><br><img src="images/loading-spinning-bubbles-dark.svg" width="32" height="32" /><br>please wait</div>
+	<div class='border-dark col3 tcenter'>loading-spokes-dark.svg<br><br><img src="images/loading-spokes-dark.svg" width="32" height="32" /><br>please wait</div>
+	<div class='border-dark col3 tcenter'>loading-bars-dark.svg<br><br><img src="images/loading-bars-dark.svg" width="32" height="32" /><br>please wait</div>
+	<div class='border-dark col3 tcenter'>loading-spin-dark.svg<br><br><img src="images/loading-spin-dark.svg" width="32" height="32" /><br>please wait</div>	
+</div>		
+
+<div id='popups'></div>
+<h2 class='subtitle'>Popups</h2>
+Use the function <b><i> openPopup( '#[popup ID]' , '[popup Title]' )</i></b> on the element which should trigger the opening of the popup.<br>
+<xmp><a class='button' onclick="openPopup('#popupName','This is a title')">Open popup</a></xmp>
+<a class='button' onclick="openPopup('#popupName','This is a title')">Open popup</a>
+<br><br>
+<p>Add the class <b><i>popup</i></b> to a div to convert it into a popup.Place the desired content inside the class
+  <b><i>popupContent</i></b> inside the popup.</p>
+
+
+<xmp><div class='popup autoheight' id='popupName'>
+	<div class='popupContent'>
+		<p> Hello! Add some content here.</p>
+	</div>
+</div></xmp>
+<div class='popup autoheight' id='popupName'>
+	<div class='popupContent'>
+		<p> Hello! Add some content here.</p>
+	</div>
+</div>
+<h3>Small Popups / Dialogues</h3>
+<p>Add the class <b><i>small</i></b> to the popup to make it small.
+<xmp>
+<a class='button' onclick="openPopup('#smallPopup','This is small popup')">Open popup</a>
+<div class='popup small autoheight' id='smallPopup'>
+	<div class='popupContent'>
+		 Hello! Add some content here.
+	</div>
+	<div class='tright buttonBar'>
+		<a class='button bg-green'>Save</a>
+		<a class='button bg-lightgrey' onclick='closePopup(this)'>Cancel</a>
+	</div>
+</div></xmp>
+<a class='button' onclick="openPopup('#smallPopup','This is a title')">Open popup</a>
+<div class='popup small autoheight' id='smallPopup'>
+	<div class='popupContent'>
+		Hello! Add some content here Hello! Add some content here Hello! Add some content here Hello! Add some content here<br>
+	</div>
+	<div class='tright buttonBar'>
+		<a class='button bg-green'>Save</a> <a class='button bg-lightgrey' onclick='closePopup(this)'>Cancel</a>
+	</div>
+</div>
+
+<div id='hidemobile'></div>
+<h2 class='subtitle'>hiding elements on mobile devices</h2>
+<p>Following classes can be added to an element to hide content on mobile:</p>
+	<table class='bold-col-1'>
+		<tr><td>.hide-on-tablet-landscape</td><td>Hides element on tablets (landscape and portrait) and smartphones</td></tr>
+		<tr><td>.hide-on-tablet-portrait</td><td>Hides element on tablets (portrait) and smartphones</td></tr>
+		<tr><td>.hide-on-mobile</td><td>Hides element on smartphones</td></tr>
+	</table><br>
+<strong>Example 1: text is hidden on tablets(all orientations) and smartphone</strong>
+<xmp><p class='red hide-on-tablet-landscape'>
+	<i class="material-icons">tablet</i> 
+	I will disappear on tablet-landscape
+</p></xmp>
+	<p class='red hide-on-tablet-landscape'><i class="material-icons">tablet</i> I will disappear on tablet-landscape</p>
+	<strong>Example 2: text is hidden on tablets(portrait orientation) and smartphone</strong>
+<xmp><p class='green hide-on-tablet-portrait'>
+	<i class="material-icons">tablet_mac</i> 
+	I will disappear on tablet-portrait
+</p></xmp>
+	<strong>Example 3: text is hidden on smartphone</strong>
+	<p class='green hide-on-tablet-portrait'><i class="material-icons">tablet_mac</i> I will disappear on tablet-portrait</p>	
+<xmp><p class='blue hide-on-mobile'>
+	<i class="material-icons">smartphone</i>
+	I will disappear on smartphones
+</p></xmp>
+	<p class='blue hide-on-mobile'><i class="material-icons">smartphone</i> I will disappear on smartphones</p>
+		<br><br>
+	<div id='hidingcols'></div>
+	<h3>Hiding table columns on mobile</h3>
+	<p>Table columns can be hidden on mobile devices by adding specific classes to the &lt;table&gt; element (see below)</p>	
+	<table class='bold-col-1'>
+		<tr><td>.hide-on-tablet-landscape-col-n</td><td>Hides n-th column on tablets (landscape and portrait) and smartphones</td></tr>
+		<tr><td>.hide-on-tablet-portrait-col-n</td><td>Hides n-th column on tablets (portrait) and smartphones</td></tr>
+		<tr><td>.hide-on-mobile-col-n</td><td>Hides n-th column on smartphones</td></tr>				
+	</table>
+	<br><br>
+
+	<strong>Example 3: Hiding table columns according to device type</strong>
+	<p>In the example below, the last column will be hidden on tablet-landscape, the fourth on table-portrait and the third on smartphones.</p>
+<xmp><table class='hide-on-tablet-landscape-col-5 hide-on-tablet-portrait-col-4 hide-on-mobile-col-3'></xmp>	
+	<table class='hide-on-tablet-landscape-col-5 hide-on-tablet-portrait-col-4 hide-on-mobile-col-3'>
+		<thead>	
+			<tr>
+				<td>COL1</td><td>COL2</td><td>COL3</td><td>COL4</td><td>COL5</td>	
+			</tr>
+		</thead>	
+		<tr><td>a1</td><td>a2</td><td>a3</td><td>a4</td><td>a5</td></tr>
+		<tr><td>b1</td><td>b2</td><td>b3</td><td>b4</td><td>b5</td></tr>
+		<tr><td>c1</td><td>c2</td><td>c3</td><td>c4</td><td>c5</td></tr>			
+	</table>	
+<!--end main wrap-->
+</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="theme-script.js"></script>
+
+</body>
+
+</html> 
