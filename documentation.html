@@ -31,8 +31,8 @@ h3.desc{border-bottom:1px solid #ddd; padding-bottom:10px; color:#b587d4}
 
 <body>
 <div class='wrap'>
-<div class='row'>
-<div class='col2 guide-nav toupper hide-on-tablet-landscape'>&nbsp;
+<div class='f-row'>
+<div class='f-col2 guide-nav toupper hide-on-tablet-landscape'>&nbsp;
 <div class='xnav'>
 <h2 class='capitalize'>Quick Reference</h2>
 <a href="#grids">Grids</a>
@@ -51,7 +51,7 @@ h3.desc{border-bottom:1px solid #ddd; padding-bottom:10px; color:#b587d4}
 <a href="#hidemobile">Hiding on mobile</a>
 <a class='button white' href='hummingbird.zip'>Get Hummingbird</a>
 </div></div>
-<div class='col10 fullontablet'>
+<div class='f-col10 fullontablet'>
 <h1 class='toupper'>Hummingbird</h1>
 <h3 class='desc'> Examples and documentation</h3>
 <div id='grids'></div>
@@ -62,70 +62,70 @@ h3.desc{border-bottom:1px solid #ddd; padding-bottom:10px; color:#b587d4}
 The actual grids don't have visible borders. Borders were added in this example to better illustrate the structure.
 </div>
 
-<div class='row bordered tcenter'>
-	<div class='col1'>.col1</div><div class='col11'>.col11</div>
-	<div class='col2'>.col2</div><div class='col10'>.col10</div>
-	<div class='col3'>.col3</div><div class='col9'>.col9</div>
-	<div class='col4'>.col4</div><div class='col8'>.col8</div>
-	<div class='col5'>.col5</div><div class='col7'>.col7</div>		
-	<div class='col6'>.col6</div><div class='col6'>.col6</div>
-	<div class='col'>col</div>	
+<div class='f-row bordered tcenter'>
+	<div class='f-col1'>.col1</div><div class='f-col11'>.col11</div>
+	<div class='f-col2'>.col2</div><div class='f-col10'>.col10</div>
+	<div class='f-col3'>.col3</div><div class='f-col9'>.col9</div>
+	<div class='f-col4'>.col4</div><div class='f-col8'>.col8</div>
+	<div class='f-col5'>.col5</div><div class='f-col7'>.col7</div>		
+	<div class='f-col6'>.col6</div><div class='f-col6'>.col6</div>
+	<div class='f-col'>col</div>	
 </div>
 <div class='note'>
 Each group of columns needs to be wrapped in a row. The total sum of the column names inside a row must be 12. 
 </div>
 <strong>Example1: </strong>
-<pre><code>&lt;div class='row'&gt; 
-	&lt;div class='col8'&gt;
+<pre><code>&lt;div class='f-row'&gt; 
+	&lt;div class='f-col8'&gt;
 		This is the first column
 	&lt;/div&gt;
-	&lt;div class='col4'&gt;
+	&lt;div class='f-col4'&gt;
 		This is the second column
 	&lt;/div&gt;			
 &lt;/div&gt;	</code>
 </pre>
 .col8 + .col4 = 12<br><br>
-<div class='row bordered'>
-	<div class='col8'>This is the first column</div><div class='col4'>This is the second column</div>
+<div class='f-row bordered'>
+	<div class='f-col8'>This is the first column</div><div class='f-col4'>This is the second column</div>
 </div><br>
 <div class='note'>
 A row can contain any number of columns, as long as their sum is 12.
 </div>
 <strong>Example2: </strong>
-<pre><code>&lt;div class='row'&gt; 
-	&lt;div class='col2'&gt;
+<pre><code>&lt;div class='f-row'&gt; 
+	&lt;div class='f-col2'&gt;
 		First column
 	&lt;/div&gt;
-	&lt;div class='col3'&gt;
+	&lt;div class='f-col3'&gt;
 		Second column
 	&lt;/div&gt;
-	&lt;div class='col5'&gt;
+	&lt;div class='f-col5'&gt;
 		Third column
 	&lt;/div&gt;
-	&lt;div class='col2'&gt;
+	&lt;div class='f-col2'&gt;
 		Fourth column
 	&lt;/div&gt;		
 &lt;/div&gt;	</code>
 </pre>
 .col2 + .col3 + .col5 + .col2 = 12<br><br>
-<div class='row bordered'>
-	<div class='col2'>First column</div><div class='col3'>Second column</div>
-	<div class='col5'>Third column</div><div class='col2'>Fourth column</div>
+<div class='f-row bordered'>
+	<div class='f-col2'>First column</div><div class='f-col3'>Second column</div>
+	<div class='f-col5'>Third column</div><div class='f-col2'>Fourth column</div>
 </div>
 
-<div id='colors'></div>	
+<div id='f-colors'></div>	
 <h2 class='subtitle'>Colors</h2>
 <p>Hummingbird has a standard color palette, as follows:</p>
-<div class='row tcenter strong'>
-	<div class='col2 bg-darkgrey'>dark grey<br>#37474f</div>
-	<div class='col2 bg-lightgrey'>light grey<br>#eceff1</div>
-	<div class='col2 bg-red'>red<br>#ef5350</div>
-	<div class='col2 bg-blue'>blue<br>#00bcd4</div>
-	<div class='col2 bg-green'>green<br>#8bc34a</div>
-	<div class='col2 bg-yellow'>yellow<br>#fdd835</div>
+<div class='f-row tcenter strong'>
+	<div class='f-col2 bg-darkgrey'>dark grey<br>#37474f</div>
+	<div class='f-col2 bg-lightgrey'>light grey<br>#eceff1</div>
+	<div class='f-col2 bg-red'>red<br>#ef5350</div>
+	<div class='f-col2 bg-blue'>blue<br>#00bcd4</div>
+	<div class='f-col2 bg-green'>green<br>#8bc34a</div>
+	<div class='f-col2 bg-yellow'>yellow<br>#fdd835</div>
 </div>
-<div class='row'>
-	<div class='col6'>
+<div class='f-row'>
+	<div class='f-col6'>
 		<h3>Use following classes for text color:</h3>
 		<table class='noborder bold-col-1'>
 		<tr><td>.darkgrey</td><td class='darkgrey'>This is a dark grey text</td><tr>
@@ -136,7 +136,7 @@ A row can contain any number of columns, as long as their sum is 12.
 		<tr><td>.yellow</td><td class='yellow'>This is a yellow text</td><tr>		
 		</table>		
 	</div>
-	<div class='col6'>
+	<div class='f-col6'>
 		<h3>Use following classes for background color:</h3>
 		<table class='noborder bold-col-1'>
 		<tr><td>.bg-darkgrey</td><td class='bg-darkgrey'>This is a dark grey background</td><tr>
@@ -163,8 +163,8 @@ A row can contain any number of columns, as long as their sum is 12.
 <span class='red'>red span</span>
 <br><br>
 <strong>Example2: </strong>
-<pre><code>&lt;div class='row'&gt;
-	&lt;div class='col bg-darkgrey'&gt;
+<pre><code>&lt;div class='f-row'&gt;
+	&lt;div class='f-col bg-darkgrey'&gt;
 		dark grey div
 	&lt;/div&gt;
 &lt;/div&gt;
@@ -173,8 +173,8 @@ A row can contain any number of columns, as long as their sum is 12.
 	green button
 &lt;/a&gt;		</code>
 </pre>
-<div class='row'>
-<div class='col bg-darkgrey'>dark grey div</div></div>
+<div class='f-row'>
+<div class='f-col bg-darkgrey'>dark grey div</div></div>
 <br>
 <a class='button bg-green'>green button</a>
 <br><br>
@@ -202,8 +202,8 @@ A row can contain any number of columns, as long as their sum is 12.
 <h2 class='subtitle'>Buttons</h2>
 
 <h3>Use following classes to style buttons:</h3>
-<div class='row'>
-	<div class='col6'>
+<div class='f-row'>
+	<div class='f-col6'>
 	<table class='noborder bold-col-1'>
 		<tr><td>.button</td><td><a class='button'>Regular Button</a></td><tr>
 		<tr><td>.button.button-disabled</td><td><a class='button button-disabled'>Disabled Button</a></td><tr>
@@ -212,7 +212,7 @@ A row can contain any number of columns, as long as their sum is 12.
 		<tr><td>.button.button-small</td><td><a class='button button-small'>Small Button</a></td><tr>	
 	</table>
 	</div>
-	<div class='col6'>
+	<div class='f-col6'>
 	<table class='noborder bold-col-1'>
 		<tr><td>.button.bg-red</td><td><a class='button bg-red'>Red Button</a></td><tr>
 		<tr><td>.button.bg-green</td><td><a class='button bg-green'>Green Button</a></td><tr>
@@ -271,8 +271,8 @@ Elements like <b>a</b>, <b>button</b> and <b>input type="button"</b> can be styl
 <div id='helpers'></div>
 <h2 class='subtitle'>Helpers</h2>
 
-<div class='row'>
-	<div class='col6'>
+<div class='f-row'>
+	<div class='f-col6'>
 	<h3>Text Manipulation</h3>
 	<table class='bold-col-1'>
 		<tr><td>original text</td><td>This Is A text</td><tr>
@@ -281,7 +281,7 @@ Elements like <b>a</b>, <b>button</b> and <b>input type="button"</b> can be styl
 		<tr><td>.capitalize</td><td class='capitalize'>ThIs Is A text</td><tr>	
 	</table>
 	</div>
-	<div class='col6'>
+	<div class='f-col6'>
 	<h3>Spacing and appearance</h3>	
 	<table class='bold-col-1'>
 		<tr><td>.noborder</td><td>Removes borders</td><tr>
@@ -295,8 +295,8 @@ Elements like <b>a</b>, <b>button</b> and <b>input type="button"</b> can be styl
 	</table>
 	</div>
 </div>
-<div class='row'>
-	<div class='col'>
+<div class='f-row'>
+	<div class='f-col'>
 	<h3>Text Alignment</h3>
 	<table class='text-align-tb  bold-col-1'>
 		<tr><td>.tleft</td><td class='tleft'>Eleifend velit nam dis condimentum suspendisse nisi lectus ad consectetur vivamus vehicula magna suspendisse velit nam non elit.Facilisi tristique porttitor cubilia dapibus condimentum lobortis a dictumst dui parturient libero ullamcorper aliquet tempus a.</td><tr>
@@ -406,59 +406,59 @@ Add the "cancel" icon after the input. It will position automatically inside the
 <br><br><h3>Inputs and background color</h3>
 <p class='message-green'><strong>Note: </strong>Inputs can be placed on any type of background without any customization. The color of the input is based on opacity  and will adjust to any color background.</p>
 <br><strong>Example:</strong>
-<xmp><div class='row'>
-	<div class='col4 bg-darkgrey'>
+<xmp><div class='f-row'>
+	<div class='f-col4 bg-darkgrey'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>		
 	</div>
-	<div class='col4 bg-lightgrey'>
+	<div class='f-col4 bg-lightgrey'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>			
 	</div>
-	<div class='col4 bg-blue'>
+	<div class='f-col4 bg-blue'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>			
 	</div>	
 </div>
-<div class='row'>
-	<div class='col4 bg-red'>
+<div class='f-row'>
+	<div class='f-col4 bg-red'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>		
 	</div>
-	<div class='col4 bg-yellow'>
+	<div class='f-col4 bg-yellow'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>			
 	</div>
-	<div class='col4 bg-green'>
+	<div class='f-col4 bg-green'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>			
 	</div>	
 </div>
 </xmp>
-<div class='row'>
-	<div class='col4 bg-darkgrey'>
+<div class='f-row'>
+	<div class='f-col4 bg-darkgrey'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>		
 	</div>
-	<div class='col4 bg-lightgrey'>
+	<div class='f-col4 bg-lightgrey'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>			
 	</div>
-	<div class='col4 bg-blue'>
+	<div class='f-col4 bg-blue'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>			
 	</div>	
 </div>
-<div class='row'>
-	<div class='col4 bg-red'>
+<div class='f-row'>
+	<div class='f-col4 bg-red'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>		
 	</div>
-	<div class='col4 bg-yellow'>
+	<div class='f-col4 bg-yellow'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>			
 	</div>
-	<div class='col4 bg-green'>
+	<div class='f-col4 bg-green'>
 		<label for='mytext'>Input Text:</label>
 		<input type='text' id='mytext'>			
 	</div>	
@@ -1033,25 +1033,25 @@ Add some content here!
 <div class='message-green'>
 <b>Note:</b> It is recommended the you use 64px for big loaders(page loaders) and 32px for small loaders(element loaders) 
 </div>
-<div class='row bg-darkgrey'>
+<div class='f-row bg-darkgrey'>
 	<div class='border col3 tcenter'>loading-spinning-bubbles.svg<br><br><img src="images/loading-spinning-bubbles.svg" width="64" height="64" /><br>please wait</div>
 	<div class='border col3 tcenter'>loading-spokes.svg<br><br><img src="images/loading-spokes.svg" width="64" height="64" /><br>please wait</div>
 	<div class='border col3 tcenter'>loading-bars.svg<br><br><img src="images/loading-bars.svg" width="64" height="64" /><br>please wait</div>
 	<div class='border col3 tcenter'>loading-spin.svg<br><br><img src="images/loading-spin.svg" width="64" height="64" /><br>please wait</div>	
 </div>
-<div class='row bg-lightgrey'>
+<div class='f-row bg-lightgrey'>
 	<div class='border-dark col3 tcenter'>loading-spinning-bubbles-dark.svg<br><br><img src="images/loading-spinning-bubbles-dark.svg" width="64" height="64" /><br>please wait</div>
 	<div class='border-dark col3 tcenter'>loading-spokes-dark.svg<br><br><img src="images/loading-spokes-dark.svg" width="64" height="64" /><br>please wait</div>
 	<div class='border-dark col3 tcenter'>loading-bars-dark.svg<br><br><img src="images/loading-bars-dark.svg" width="64" height="64" /><br>please wait</div>
 	<div class='border-dark col3 tcenter'>loading-spin-dark.svg<br><br><img src="images/loading-spin-dark.svg" width="64" height="64" /><br>please wait</div>	
 </div>	
-<div class='row bg-darkgrey'>
+<div class='f-row bg-darkgrey'>
 	<div class='border col3 tcenter'>loading-spinning-bubbles.svg<br><br><img src="images/loading-spinning-bubbles.svg" width="32" height="32" /><br>please wait</div>
 	<div class='border col3 tcenter'>loading-spokes.svg<br><br><img src="images/loading-spokes.svg" width="32" height="32" /><br>please wait</div>
 	<div class='border col3 tcenter'>loading-bars.svg<br><br><img src="images/loading-bars.svg" width="32" height="32" /><br>please wait</div>
 	<div class='border col3 tcenter'>loading-spin.svg<br><br><img src="images/loading-spin.svg" width="32" height="32" /><br>please wait</div>	
 </div>
-<div class='row bg-lightgrey'>
+<div class='f-row bg-lightgrey'>
 	<div class='border-dark col3 tcenter'>loading-spinning-bubbles-dark.svg<br><br><img src="images/loading-spinning-bubbles-dark.svg" width="32" height="32" /><br>please wait</div>
 	<div class='border-dark col3 tcenter'>loading-spokes-dark.svg<br><br><img src="images/loading-spokes-dark.svg" width="32" height="32" /><br>please wait</div>
 	<div class='border-dark col3 tcenter'>loading-bars-dark.svg<br><br><img src="images/loading-bars-dark.svg" width="32" height="32" /><br>please wait</div>
